@@ -532,7 +532,51 @@ class MapPage extends StatelessWidget {
     );
   }
 }
+class HospitalPage extends StatelessWidget {
+  const HospitalPage({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Xəstəxanalar'),
+      ),
+      body: const Center(
+        child: Text(
+          '🏥 Xəstəxanalar bölməsi hazırlanır',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AzerbaijanMapPage extends StatelessWidget {
+  const AzerbaijanMapPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Azərbaycan xəritəsi'),
+      ),
+      body: const Center(
+        child: Text(
+          '🇦🇿 Azərbaycan xəritəsi hazırlanır',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
 
