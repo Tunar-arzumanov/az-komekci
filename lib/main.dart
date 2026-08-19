@@ -154,8 +154,13 @@ class _HomePageState extends State<HomePage> {
       icon: Icons.work,
       color: Color(0xFF00897B),
     ),
-  ];
-
+  Category(
+  title: 'Xəritə',
+  icon: Icons.map,
+  color: Color(0xFF4CAF50),
+),
+),
+];
   @override
   Widget build(BuildContext context) {
     final filtered = categories
@@ -299,8 +304,12 @@ onTap: () {
   if (category.title == 'Xəstəxanalar') {
     Navigator.push(
       context,
+      MaterialPageRoute(builder: (_) => const HospitalsPage()),  );
+  } else if (category.title == 'Xəritə') {
+   Navigator.push(
+      context,
       MaterialPageRoute(
-        builder: (_) => const HospitalsPage(),
+        builder: (_) => const AzerbaijanMapPage(),
       ),
     );
   } else {
@@ -308,6 +317,8 @@ onTap: () {
       context,
       category.title,
     );
+  }
+},
   }
 },                  );
                 },
