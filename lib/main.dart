@@ -67,13 +67,13 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
-
-  final List<Widget> pages = const [
-    HomePage(),
-    MapPage(),
-    FavoritesPage(),
-    ProfilePage(),
-  ];
+    final List<Widget> pages = const [
+  HomePage(),
+  MapPage(),
+  FavoritesPage(),
+  ProfilePage(),
+  AssistantPage(),
+];
 
   @override
   Widget build(BuildContext context) {
@@ -102,11 +102,11 @@ class _MainScreenState extends State<MainScreen> {
             selectedIcon: Icon(Icons.star),
             label: 'Seçilmiş',
           ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: 'Profil',
-          ),
+NavigationDestination(
+  icon: Icon(Icons.smart_toy_outlined),
+  selectedIcon: Icon(Icons.smart_toy),
+  label: 'Köməkçi',
+),
         ],
       ),
     );
