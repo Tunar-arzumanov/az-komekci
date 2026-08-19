@@ -23,6 +23,9 @@ jobs:
       - name: Create Android project
         run: flutter create --platforms=android .
 
+      - name: Set app name
+        run: sed -i 's/android:label="[^"]*"/android:label="Az Köməkçi"/' android/app/src/main/AndroidManifest.xml
+
       - name: Get dependencies
         run: flutter pub get
 
