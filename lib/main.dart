@@ -291,45 +291,48 @@ class _HomePageState extends State<HomePage> {
           ),
 
           SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            sliver: SliverGrid(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final category = filtered[index];
+  padding: const EdgeInsets.symmetric(horizontal: 20),
+  sliver: SliverGrid(
+    delegate: SliverChildBuilderDelegate(
+      (context, index) {
+        final category = filtered[index];
 
-                  return CategoryCard(
-                    category: category,
-onTap: () {
-  if (category.title == 'Xəstəxanalar') {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const HospitalsPage()),  );
-  } else if (category.title == 'Xəritə') {
-   Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => const AzerbaijanMapPage(),
-      ),
-    );
-  } else {
-    showCategoryMessage(
-      context,
-      category.title,
-    );
-}
-);
-
-},
-    childCount: filtered.length,
+        return CategoryCard(
+          category: category,
+          onTap: () {
+            if (category.title == 'Xəstəxanalar') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const HospitalPage(),
+                ),
+              );
+            } else if (category.title == 'Xəritə') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AzerbaijanMapPage(),
+                ),
+              );
+            } else {
+              showCategoryMessage(
+                context,
+                category.title,
+              );
+            }
+          },
+        );
+      },
+      childCount: filtered.length,
+    ),
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2,
+      crossAxisSpacing: 14,
+      mainAxisSpacing: 14,
+      childAspectRatio: 1.15,
+    ),
   ),
-  gridDelegate:
-                crossAxisCount: 2,
-                crossAxisSpacing: 14,
-                mainAxisSpacing: 14,
-                childAspectRatio: 1.15,
-              ),
-            ),
-          ),
+),
 
           SliverToBoxAdapter(
             child: Padding(
