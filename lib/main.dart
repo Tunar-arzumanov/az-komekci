@@ -316,13 +316,13 @@ onTap: () {
       context,
       category.title,
     );
-  }
-              );
-    },
+}
+);
+
+},
     childCount: filtered.length,
   ),
-  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(      gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+  gridDelegate:
                 crossAxisCount: 2,
                 crossAxisSpacing: 14,
                 mainAxisSpacing: 14,
