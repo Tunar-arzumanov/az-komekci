@@ -112,7 +112,24 @@ NavigationDestination(
     );
   }
 }
+class AssistantPage extends StatelessWidget {
+  const AssistantPage({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Köməkçi'),
+      ),
+      body: const Center(
+        child: Text(
+          'AZ Köməkçi hazırdır!',
+          style: TextStyle(fontSize: 20),
+        ),
+      ),
+    );
+  }
+}
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
