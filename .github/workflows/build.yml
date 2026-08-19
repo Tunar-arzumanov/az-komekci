@@ -24,12 +24,13 @@ jobs:
         run: flutter create --platforms=android .
 
       - name: Set app name
-        run: sed -i 's/android:label="[^"]*"/android:label="Az Köməkçi"/' android/app/src/main/AndroidManifest.xml
+        run: sed -i 's/android:label="[^"]*"/android:label="AZ Köməkçi"/' android/app/src/main/AndroidManifest.xml
+
+      - name: Add internet permission
+        run: sed -i '/<manifest/a\    <uses-permission android:name="android.permission.INTERNET"/>' android/app/src/main/AndroidManifest.xml
 
       - name: Get dependencies
         run: flutter pub get
-
-      
 
       - name: Build APK
         run: flutter build apk --release
