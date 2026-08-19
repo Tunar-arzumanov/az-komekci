@@ -32,8 +32,8 @@ jobs:
       - name: Build App Bundle
         run: flutter build apk --release
 
-      - name: Upload App Bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: az-komekci-aab
-          path: build/app/outputs/bundle/release/app-release.aab
+- name: Upload APK
+  uses: actions/upload-artifact@v4
+  with:
+    name: az-komekci-apk
+    path: build/app/outputs/flutter-apk/app-release.apk
