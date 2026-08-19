@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 
 void main() {
   runApp(const AZKomekciApp());
@@ -537,14 +539,21 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        '🗺️ Xəritə\nBurada xəritə olacaq',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('🗺️ Xəritə'),
+      ),
+      body: FlutterMap(
+        options: const MapOptions(
+          initialCenter: LatLng(40.1431, 47.5769),
+          initialZoom: 6.5,
         ),
+        children: [
+          TileLayer(
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            userAgentPackageName: 'com.azkomekci.app',
+          ),
+        ],
       ),
     );
   }
