@@ -482,7 +482,7 @@ void showCategoryMessage(BuildContext context, String title) {
   );
 }
 
-class MapPage extends StatelessWidget class HospitalsPage extends StatelessWidget {
+class HospitalsPage extends StatelessWidget {
   const HospitalsPage({super.key});
 
   @override
@@ -503,13 +503,15 @@ class MapPage extends StatelessWidget class HospitalsPage extends StatelessWidge
     );
   }
 }
+
+class MapPage extends StatelessWidget {
   const MapPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        '🗺️ Xəritə\n\nBurada xəritə olacaq',
+        '🗺️ Xəritə\nBurada xəritə olacaq',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 22,
