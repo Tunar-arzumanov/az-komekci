@@ -159,7 +159,6 @@ class _HomePageState extends State<HomePage> {
   icon: Icons.map,
   color: Color(0xFF4CAF50),
 ),
-),
 ];
   @override
   Widget build(BuildContext context) {
