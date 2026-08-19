@@ -550,7 +550,7 @@ class MapPage extends StatelessWidget {
         ),
         children: [
           TileLayer(
-            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            urlTemplate: 'https://{a-c}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
             userAgentPackageName: 'com.azkomekci.app',
           ),
         ],
