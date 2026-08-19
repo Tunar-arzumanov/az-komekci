@@ -304,14 +304,14 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const HospitalPage(),
+builder: (_) => HospitalPage(),
                 ),
               );
             } else if (category.title == 'Xəritə') {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const AzerbaijanMapPage(),
+builder: (_) => AzerbaijanMapPage(),
                 ),
               );
             } else {
