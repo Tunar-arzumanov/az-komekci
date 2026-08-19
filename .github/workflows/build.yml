@@ -29,11 +29,13 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Build App Bundle
+      
+
+      - name: Build APK
         run: flutter build apk --release
 
-- name: Upload APK
-  uses: actions/upload-artifact@v4
-  with:
-    name: az-komekci-apk
-    path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: az-komekci-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
