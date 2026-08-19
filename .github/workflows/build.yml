@@ -1,4 +1,4 @@
-name: Build Flutter APK
+name: Build Flutter Android
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.35.2'
+          flutter-version: '3.35.0'
           channel: stable
 
       - name: Create Android project
@@ -26,11 +26,11 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Build APK
-        run: flutter build apk --release
+      - name: Build App Bundle
+        run: flutter build appbundle --release
 
-      - name: Upload APK
+      - name: Upload App Bundle
         uses: actions/upload-artifact@v4
         with:
-          name: az-komekci-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          name: az-komekci-aab
+          path: build/app/outputs/bundle/release/app-release.aab
