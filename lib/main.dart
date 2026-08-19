@@ -317,13 +317,11 @@ onTap: () {
       category.title,
     );
   }
-},
-  }
-},                  );
-                },
-                childCount: filtered.length,
-              ),
-              gridDelegate:
+              );
+    },
+    childCount: filtered.length,
+  ),
+  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(      gridDelegate:
                   const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 14,
