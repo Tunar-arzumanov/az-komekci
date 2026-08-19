@@ -295,13 +295,21 @@ class _HomePageState extends State<HomePage> {
 
                   return CategoryCard(
                     category: category,
-                    onTap: () {
-                      showCategoryMessage(
-                        context,
-                        category.title,
-                      );
-                    },
-                  );
+onTap: () {
+  if (category.title == 'Xəstəxanalar') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const HospitalsPage(),
+      ),
+    );
+  } else {
+    showCategoryMessage(
+      context,
+      category.title,
+    );
+  }
+},                  );
                 },
                 childCount: filtered.length,
               ),
@@ -474,7 +482,27 @@ void showCategoryMessage(BuildContext context, String title) {
   );
 }
 
-class MapPage extends StatelessWidget {
+class MapPage extends StatelessWidget class HospitalsPage extends StatelessWidget {
+  const HospitalsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hospitals Page'),
+      ),
+      body: const Center(
+        child: Text(
+          'Xəstəxanalar',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
   const MapPage({super.key});
 
   @override
